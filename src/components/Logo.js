@@ -3,21 +3,29 @@ import styled from 'styled-components';
 
 const LogoStyles = styled.svg`
   @keyframes line-animation {
-    0% {
-      fill: transparent;
-    }
-    80% {
+    to {
       stroke-dashoffset: 0px;
-      fill: transparent;
-    }
-    100% {
-      fill: var(--orange);
     }
   }
 
+  @keyframes fill {
+    0% {
+      fill: transparent;
+    }
+    60% {
+      fill: transparent;
+    }
+    100% {
+      fill: var(--green);
+    }
+  }
+
+  animation: fill 2s ease forwards;
+  width: clamp(200px, 61%, 484px);
+  margin: 0 auto;
   path {
-    stroke-width: 5px;
-    stroke: var(--orange);
+    stroke-width: 1px;
+    stroke: var(--green);
     &:nth-child(1) {
       stroke-dasharray: 302px;
       stroke-dashoffset: 302px;
@@ -62,16 +70,8 @@ const LogoStyles = styled.svg`
 `;
 
 export default function Logo() {
-  const logoRef = useRef(null);
-
   return (
-    <LogoStyles
-      ref={logoRef}
-      width="484"
-      height="97"
-      viewBox="0 0 484 97"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <LogoStyles viewBox="0 0 484 97" xmlns="http://www.w3.org/2000/svg">
       <path
         className="path"
         d="M59.3125 72H50.2188L45.9531 58.6406H20.4531L16.1406 72H7.46875L27.8125 10.7344H39.25L59.3125 72ZM43.5625 51.1875L33.2031 18.4219L22.8438 51.1875H43.5625Z"

@@ -1,20 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import Headline from '../components/Headline';
+import Layout from '../components/Layout';
 import Logo from '../components/Logo';
-import GlobalStyles from '../styles/GlobalStyles';
 
-const Screen1 = styled.div`
+const HomeStyles = styled.div`
   display: grid;
-  width: 100vw;
-  height: 100vh;
   place-content: center;
 `;
 
 export default function Home() {
   return (
-    <Screen1>
-      <GlobalStyles />
-      <Logo />
-    </Screen1>
+    <Layout>
+      <HomeStyles>
+        <Logo />
+        <Headline />
+      </HomeStyles>
+    </Layout>
   );
 }
