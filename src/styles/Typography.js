@@ -10,7 +10,7 @@ const Typography = createGlobalStyle`
 
   html {
     font-family: Consola,monospace,ui-monospace;
-    color: var(--green);
+    color: var(--white);
   }
 `;
 export default Typography;

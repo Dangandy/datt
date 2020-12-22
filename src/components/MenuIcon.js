@@ -20,7 +20,7 @@ const MenuIconStyles = styled.a`
           transition: 0.3s ease-out;
         `
       : css`
-          border: 2px solid var(--green);
+          border: 2px solid var(--white);
           transition: 0.3s ease-out;
         `}
 
@@ -36,7 +36,7 @@ const MenuIconStyles = styled.a`
             transition: 0.3s ease-out;
           `
         : css`
-            background-color: var(--green);
+            background-color: var(--white);
             transition: 0.3s ease-out;
           `}
   }

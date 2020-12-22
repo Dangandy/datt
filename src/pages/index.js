@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import Headline from '../components/Headline';
 import Layout from '../components/Layout';
 import Logo from '../components/Logo';
+import Logo2 from '../components/Logo2';
+
+import Rocket from '../components/Rocket';
 
 const HomeStyles = styled.div`
   display: grid;
@@ -14,6 +17,8 @@ export default function Home() {
     <Layout>
       <HomeStyles>
         <Logo />
+        <Logo2 />
+        <Rocket />
         <Headline />
       </HomeStyles>
     </Layout>

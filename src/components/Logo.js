@@ -16,7 +16,7 @@ const LogoStyles = styled.svg`
       fill: transparent;
     }
     100% {
-      fill: var(--green);
+      fill: var(--white);
     }
   }
 
@@ -25,7 +25,7 @@ const LogoStyles = styled.svg`
   margin: 0 auto;
   path {
     stroke-width: 1px;
-    stroke: var(--green);
+    stroke: var(--white);
     &:nth-child(1) {
       stroke-dasharray: 302px;
       stroke-dashoffset: 302px;

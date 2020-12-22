@@ -2,10 +2,15 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --green: #59886b;
-    --red: #c05555;
-    --orange: #ffc85c;
-    --yellow: #fff8c1;
+    --purple: #4b3c6b;
+    --pink: #eb0c7b;
+    --darkpink: #da0f7a;
+    --orange: #edbc87;
+    --darkorange: #ffa283;
+    --blue: #16f2db;
+    --darkblue: #13cdcd;
+    --maroon: #8a447a;
+    --grey: #6a6a8a;
     --lg: 1140px;
     --sm: 420px;
   }
