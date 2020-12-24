@@ -1,26 +1,31 @@
 import React, { useState } from 'react';
-import { Spring } from 'react-spring/renderprops';
+import { Spring, config } from 'react-spring/renderprops';
 import styled from 'styled-components';
 
 const CircleBorder = styled.div`
   border-radius: 50%;
   background-color: var(--grey);
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
+  color: var(--white);
+  display: grid;
+  place-content: center;
+  margin: 0 auto;
 `;
 
 export default function Rocket() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <CircleBorder onClick={() => setToggle(true)}>
+    <CircleBorder onClick={() => setToggle(!toggle)}>
       <Spring
         from={{ transform: 'rotate(-45deg) translateX(0px) translateY(0px)' }}
         to={{
           transform: toggle
-            ? 'rotateZ(-45deg) translateX(425px) translateY(-425px)'
+            ? 'rotateZ(-45deg) translateX(200px) translateY(-200px)'
             : 'rotate(-45deg) translateX(0px) translateY(0px)',
         }}
+        config={{ ...config.molasses, mass: 50 }}
       >
         {(props) => (
           <svg

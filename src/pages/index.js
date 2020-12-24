@@ -16,10 +16,9 @@ export default function Home() {
   return (
     <Layout>
       <HomeStyles>
-        <Logo />
         <Logo2 />
-        <Rocket />
         <Headline />
+        <Rocket />
       </HomeStyles>
     </Layout>
   );
