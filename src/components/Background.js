@@ -25,7 +25,17 @@ function getWaves(amplitude) {
   return array;
 }
 
+let defaultHeight = 1080;
+let defaultWidth = 1440;
+if (typeof window === `undefined`) {
+  defaultHeight = window.innerHeight;
+  defaultWidth = window.innerWidth;
+}
+
 export default function Background2() {
+  const [innerWidth, setInnerWidth] = useState(defaultWidth);
+  const [innerHeight, setInnerHeight] = useState(defaultHeight);
+
   const { amplitude } = useSpring({
     from: { amplitude: -1 },
     to: async (next) => {
@@ -39,10 +49,6 @@ export default function Background2() {
     },
     reset: true,
   });
-
-  if (typeof window === `undefined`) {
-    return null;
-  }
 
   return (
     <animated.svg
@@ -312,8 +318,8 @@ export default function Background2() {
         const r = Math.random() + 1;
         const cx = Math.random() * 69;
         const cy = Math.random() * 69;
-        const width = getRandomInt(window.innerWidth);
-        const height = getRandomInt(window.innerHeight);
+        const width = getRandomInt(innerWidth);
+        const height = getRandomInt(innerHeight);
         const animateValue = Math.random() * 3;
 
         return (
