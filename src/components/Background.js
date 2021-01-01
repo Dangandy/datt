@@ -1,26 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { animated, useSpring } from 'react-spring';
 import useMedia from '../utils/useMedia';
+
+const ClippedStyles = styled.div`
+  /* width: 100%;
+  height: 100%; */
+`;
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+/**
+ * Math: amplitude = 2, period = [3,x,10]
+ */
+function getWaves(amplitude) {
+  const array = ['100% 0', '0 0'];
+  const height = 95;
+  const period = 3;
+  for (let i = 0; i <= 100; i += 1) {
+    array.push(`${i}% ${height + amplitude * Math.sin(i * (1 / period))}%`);
+  }
+  return array;
+}
+
 export default function Background2() {
   // const media = useMedia();
+  // const clipPath = `polygon(${getWaves().join(',')})`;
+  const { amplitude } = useSpring({
+    from: { amplitude: -1 },
+    to: async (next) => {
+      while (1) {
+        await next({ amplitude: 1 });
+        await next({ amplitude: -1 });
+      }
+    },
+    config: {
+      duration: 5000,
+    },
+    reset: true,
+  });
   return (
-    <svg
+    <animated.svg
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
       style={{
         background: '#4b3c6b',
         width: '100vw',
         height: '100vh',
-        paddin: 0,
+        padding: 0,
         margin: 0,
         zIndex: -1,
         position: 'fixed',
         top: 0,
         left: 0,
+        clipPath: amplitude.to((num) => `polygon(${getWaves(num).join(',')})`),
       }}
     >
       <g transform="scale(0.42)">
@@ -285,7 +320,7 @@ export default function Background2() {
               cy={cy}
               r={r}
               fill={colours[i % 3]}
-              style={{ 'mix-blend-mode': 'screen' }}
+              style={{ mixBlendMode: 'screen' }}
             >
               <animate
                 attributeName="opacity"
@@ -314,6 +349,6 @@ export default function Background2() {
           </g>
         );
       })}
-    </svg>
+    </animated.svg>
   );
 }

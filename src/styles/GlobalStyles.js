@@ -17,6 +17,11 @@ const GlobalStyles = createGlobalStyle`
   }
   body{
     margin: 0px;
+    overflow-x:hidden;
+  }
+  html{
+    scrollbar-width: thin;
+    scrollbar-color: var(--pink) var(--purple);
   }
 `;
 

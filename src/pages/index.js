@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import Headline from '../components/Headline';
 import Layout from '../components/Layout';
 import Logo from '../components/Logo';
-import Logo2 from '../components/Logo2';
-
 import Rocket from '../components/Rocket';
 
 const HomeStyles = styled.div`
@@ -16,9 +14,8 @@ export default function Home() {
   return (
     <Layout>
       <HomeStyles>
-        <Logo2 />
+        <Logo />
         <Headline />
-        <Rocket />
       </HomeStyles>
     </Layout>
   );
