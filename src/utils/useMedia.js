@@ -6,17 +6,19 @@ export default function useMedia() {
 
   useEffect(
     () => {
+      if (typeof window === `undefined`) {
+        return null;
+      }
+
       const handleResize = () => {
-        if (window) {
-          setValue({ width: window.innerWidth, height: window.innerHeight });
-        }
+        setValue({ width: window.innerWidth, height: window.innerHeight });
       };
 
       window.addEventListener('resize', handleResize);
 
       return () => window.removeEventListener('resize', handleResize);
     },
-    [window] // Empty array ensures effect is only run on mount and unmount
+    [] // Empty array ensures effect is only run on mount and unmount
   );
 
   return value;

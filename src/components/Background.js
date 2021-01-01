@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { animated, useSpring } from 'react-spring';
 import useMedia from '../utils/useMedia';
@@ -26,8 +26,6 @@ function getWaves(amplitude) {
 }
 
 export default function Background2() {
-  // const media = useMedia();
-  // const clipPath = `polygon(${getWaves().join(',')})`;
   const { amplitude } = useSpring({
     from: { amplitude: -1 },
     to: async (next) => {
@@ -41,6 +39,11 @@ export default function Background2() {
     },
     reset: true,
   });
+
+  if (typeof window === `undefined`) {
+    return null;
+  }
+
   return (
     <animated.svg
       xmlns="http://www.w3.org/2000/svg"
@@ -309,8 +312,8 @@ export default function Background2() {
         const r = Math.random() + 1;
         const cx = Math.random() * 69;
         const cy = Math.random() * 69;
-        const width = getRandomInt(window && window.innerWidth);
-        const height = getRandomInt(window && window.innerHeight);
+        const width = getRandomInt(window.innerWidth);
+        const height = getRandomInt(window.innerHeight);
         const animateValue = Math.random() * 3;
 
         return (
