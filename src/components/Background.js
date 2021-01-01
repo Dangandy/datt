@@ -309,8 +309,8 @@ export default function Background2() {
         const r = Math.random() + 1;
         const cx = Math.random() * 69;
         const cy = Math.random() * 69;
-        const width = getRandomInt(window.innerWidth);
-        const height = getRandomInt(window.innerHeight);
+        const width = getRandomInt(window && window.innerWidth);
+        const height = getRandomInt(window && window.innerHeight);
         const animateValue = Math.random() * 3;
 
         return (
