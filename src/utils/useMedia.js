@@ -4,14 +4,17 @@ import { useState, useEffect } from 'react';
 let defaultHeight = 1080;
 let defaultWidth = 1440;
 
-if (typeof window === `undefined`) {
+if (typeof window !== `undefined`) {
   defaultHeight = window.innerHeight;
   defaultWidth = window.innerWidth;
 }
 
 export default function useMedia() {
   // State and setter for matched value
-  const [value, setValue] = useState({ width: 1440, height: 1080 });
+  const [value, setValue] = useState({
+    width: defaultWidth,
+    height: defaultHeight,
+  });
 
   useEffect(
     () => {

@@ -27,7 +27,7 @@ function getWaves(amplitude) {
 
 let defaultHeight = 1080;
 let defaultWidth = 1440;
-if (typeof window === `undefined`) {
+if (typeof window !== `undefined`) {
   defaultHeight = window.innerHeight;
   defaultWidth = window.innerWidth;
 }
