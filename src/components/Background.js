@@ -8,8 +8,8 @@ const ClippedStyles = styled.div`
   height: 100%; */
 `;
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
+function getRandomInt(max, min = 0) {
+  return Math.floor(Math.random() * Math.floor(max)) + min;
 }
 
 /**
@@ -312,12 +312,14 @@ export default function Background2() {
         </g>
       </g>
       {Array.from({ length: 420 }, (_, i) => {
-        const begin = Math.max(Math.random() * 69, 30);
-        const dur = Math.max(Math.random() * 69, 30);
+        const begin = getRandomInt(20, 10);
+        const dur = getRandomInt(20, 10);
+        // const begin = Math.max(Math.random() * 42, 7);
+        // const dur = Math.max(Math.random() * 42, 7);
         const colours = ['#da0f7a', '#ffa283', '#13cdcd'];
         const r = Math.random() + 1;
-        const cx = Math.random() * 69;
-        const cy = Math.random() * 69;
+        const cx = getRandomInt(20, 10);
+        const cy = getRandomInt(20, 10);
         const width = getRandomInt(innerWidth);
         const height = getRandomInt(innerHeight);
         const animateValue = Math.random() * 3;
