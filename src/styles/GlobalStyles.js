@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
   body{
     margin: 0px;
     overflow-x:hidden;
-    background-color: var(--purple)
+    background-color: var(--white)
   }
   html{
     scrollbar-width: thin;

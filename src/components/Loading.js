@@ -12,7 +12,8 @@ const Container = styled.div`
   transform: skew(-2deg, -2deg);
   width: 100vw;
   height: 100vh;
-  color: var(--white);
+  color: var(--purple);
+  flex-direction: column;
 
   div {
     display: flex;
@@ -135,6 +136,7 @@ export default function Loading() {
           .
         </animated.div>
       </div>
+      <div className="warning">Warning, high cpu usage!!</div>
     </Container>
   );
 }

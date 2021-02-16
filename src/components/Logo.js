@@ -10,6 +10,7 @@ const SvgStyles = styled.svg`
 const Container = styled.div`
   display: grid;
   place-content: center;
+  margin-top: 30vh;
 `;
 
 export default function Logo2() {

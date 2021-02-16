@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Footer from './Footer';
 import Nav from './Nav';
 import Background from './Background';
+import Projects from './Projects';
 
 const Container = styled.div`
   display: grid;
@@ -15,11 +16,12 @@ export default function Layout({ children }) {
   return (
     <div>
       <Background />
-      <Container onScroll={() => console.log('scrolling from layout')}>
+      <Container>
         <Nav />
         {children}
-        <Footer />
       </Container>
+      <Projects />
+      <Footer />
     </div>
   );
 }

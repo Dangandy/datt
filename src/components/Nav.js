@@ -7,6 +7,7 @@ const NavGrid = styled.nav`
   width: 100%;
   place-content: center;
   margin-top: 6rem;
+  position: sticky;
 
   ul {
     max-width: var(--lg);
@@ -34,7 +35,7 @@ const NavGrid = styled.nav`
   display: grid;
 `;
 
-const Container = styled.div`
+const Container = styled.header`
   width: 100%;
 `;
 

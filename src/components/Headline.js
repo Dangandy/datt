@@ -4,7 +4,7 @@ import { FadeIn } from '../styles/FadeIn';
 
 const Container = styled.div`
   width: clamp(200px, 61%, 484px);
-  margin: 0 auto;
+  margin: 0 auto 30vh auto; // offset by Navbar
   text-align: center;
 `;
 

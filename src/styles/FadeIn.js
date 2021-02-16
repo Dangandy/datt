@@ -13,7 +13,6 @@ export const FadeIn = styled.div`
     }
   }
 
-  color: var(--white);
   font-size: clamp(0.5rem, 2.5vh, 1rem);
   animation: fadeIn 2.3s ease forwards;
 `;
