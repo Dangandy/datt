@@ -12,7 +12,7 @@ const AboutWrapper = styled.div`
   margin: 0 2rem;
 `;
 
-export default function About() {
+export default function Projects() {
   return (
     <ScrollCarousel>
       <AboutWrapper>

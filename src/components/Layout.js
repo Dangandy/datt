@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Nav from './Nav';
 import Background from './Background';
 import Projects from './Projects';
+import About from './About';
 
 const Container = styled.div`
   display: grid;
@@ -15,12 +16,13 @@ const Container = styled.div`
 export default function Layout({ children }) {
   return (
     <div>
-      <Background />
+      {/* <Background /> */}
       <Container>
         <Nav />
         {children}
       </Container>
       <Projects />
+      <About />
       <Footer />
     </div>
   );

@@ -14,7 +14,7 @@ const PageStyles = styled.div`
 `;
 
 export default function Home() {
-  const [showLoading, setShowLoading] = useState(true);
+  const [showLoading, setShowLoading] = useState(false);
 
   // Force loading
   useEffect(() => {
